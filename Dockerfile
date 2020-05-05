@@ -27,7 +27,8 @@ RUN apt update && apt upgrade -y \
     # apt
     && apt install -y p7zip-full                                                                                 \
     && apt install -y gobuster dirbuster sslscan nikto                                                           \
-    && apt install -y enum4linux                                                                                            
+    && apt install -y enum4linux  iputils-tracepath
+                                                                                          
     # xwindow                                                                                                               
 
 
