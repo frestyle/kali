@@ -15,7 +15,7 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": [],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -24,11 +24,22 @@
 	// "postCreateCommand": "apt-get update && apt-get install -y git",
 
 	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+	"runArgs": [ 
+			"--cap-add=SYS_PTRACE"
+			,"--cap-add=NET_ADMIN"
+			,"--security-opt"
+			,"seccomp=unconfined" 
+			,"--sysctl","net.ipv6.conf.all.disable_ipv6=0"
+			,"--network", "host"
+			,"--device","/dev/net/tun" 
+			,"-e" ,"DISPLAY=:0"
+			,"--hostname", "kalilinux"
+		    ],
 
 	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-in-docker.
-	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
-
+	"mounts": [ 
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
+	 ],
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
 }
