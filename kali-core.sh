@@ -11,8 +11,8 @@ docker run --rm -ti                                     \
     --cap-add=NET_ADMIN                                 \
     --device /dev/net/tun                               \
     --sysctl net.ipv6.conf.all.disable_ipv6=0           \
-    --network host                                      \
-    -v "$PWD/share:/home/kali/share"                    \
+    --network bridge                                      \
+    -v "$PWD:/home/kali"                    \
     -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix      \
     kali:core bash &&\
 xhost -
