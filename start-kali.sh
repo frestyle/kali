@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # build / update image 
-docker build --rm -t kali:core -f Dockerfile .
+#docker build --rm -t kali:core -f Dockerfile .
 
 # start kali  
 xhost + &&\
@@ -14,7 +14,7 @@ docker run --rm -ti                                     \
     --network bridge                                      \
     -v "$PWD:/home/kali"                    \
     -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix      \
-    kali:core bash &&\
+    kali-core:latest bash &&\
 xhost -
 
 
