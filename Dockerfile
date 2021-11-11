@@ -12,7 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt -y full-upgrade                                                                                       \
     && apt install -y --no-install-recommends apt-utils dialog 2>&1                                                         \
     && apt install -y unzip                                                                                                 \
-    && apt install -y bash-completion iproute2  iputils-ping   netdiscover   netcat                                         \
+    && apt install -y bash-completion iproute2  iputils-ping   netdiscover                                                  \
     && apt install -y build-essential  wget sudo unzip wget vim procps lsb-release                                          \
     && apt install -y libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxi6 libxtst6   libssl-dev                  \    
     # nethunter meta package > 700MB   
