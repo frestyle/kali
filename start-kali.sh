@@ -14,7 +14,7 @@ docker run --rm -ti                                     \
     --network bridge                                      \
     -v "$PWD:/home/kali"                    \
     -e DISPLAY=:0 -v /tmp/.X11-unix:/tmp/.X11-unix      \
-    kali:core bash &&\
+    ghcr.io/frestyle/kali:latest bash &&\
 xhost -
 
 
